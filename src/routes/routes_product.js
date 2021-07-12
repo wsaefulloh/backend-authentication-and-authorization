@@ -2,9 +2,10 @@ const express = require("express");
 const routing = express.Router();
 const ctrl = require("../controllers/controllers_product");
 const validate = require("../middleware/validate")
+const upload = require("../middleware/upload")
 
 //CREATE --> POST
-routing.post("/add",validate(['admin']), ctrl.addData);
+routing.post("/add",validate(['admin']), upload.single("image"), ctrl.addData);
 
 //READ --> GET
 routing.get("/all",validate(['admin','user','member']),ctrl.getAll);

@@ -169,6 +169,7 @@ products.searchbyName = (name) => {
                     brand : data.brand_product,
                     store : data.store_name,
                     price : data.price_product,
+                    image : data.image_product,
                     create : data.date_create,
                     update : data.date_update
                 }
@@ -187,7 +188,7 @@ products.searchbyName = (name) => {
 products.addData = (data) => {
     return new Promise((resolve, reject) => {
         let date_create = new Date()
-        db.query('INSERT INTO public.detail_product (name_product, price_product, brand_product, store_name, id_category, date_create, date_update) VALUES ($1, $2, $3, $4, $5, $6, $7)', [data.name_product, data.price_product, data.brand_product, data.store_name, data.id_category, date_create, date_create])
+        db.query('INSERT INTO public.detail_product (name_product, price_product, brand_product, image_product, store_name, id_category, date_create, date_update) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)', [data.name_product, data.price_product, data.brand_product, data.image_product, data.store_name, data.id_category, date_create, date_create])
         .then((res) => {
             resolve('Add product success')
         }).catch((err) => {

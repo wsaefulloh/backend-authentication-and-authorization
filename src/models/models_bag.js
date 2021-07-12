@@ -3,7 +3,7 @@ const bag = {}
 
 bag.getAll = () => {
     return new Promise((resolve, reject) => {
-        db.query("SELECT id_bag, name_product, price_product, brand_product, count, store_name, public.bag.id_product AS product_id FROM public.bag INNER JOIN public.detail_product ON public.bag.id_product = public.detail_product.id_product")
+        db.query("SELECT id_bag, name_product, price_product, brand_product, count, store_name, image_product public.bag.id_product AS product_id FROM public.bag INNER JOIN public.detail_product ON public.bag.id_product = public.detail_product.id_product")
         .then((res) => {
             const productJSON = res.rows
             const dataProduct = productJSON.map((data) => {
@@ -13,6 +13,7 @@ bag.getAll = () => {
                     id_product : data.product_id,
                     name : data.name_product,
                     brand : data.brand_product,
+                    image : data.image_product,
                     store : data.store_name,
                     price : data.price_product,
                     count : data.count,

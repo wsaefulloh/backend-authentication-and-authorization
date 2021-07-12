@@ -67,6 +67,8 @@ products.searchbyName = async (req, res) => {
 
 products.addData = async (req, res) => {
     try {
+        console.log(req.file)
+        return
         const result = await model.addData(req.body)
         return respone(res, 201, result)
     } catch (error) {
