@@ -12,6 +12,7 @@ const checkToken = (role) => {
             if(err) {
                 return respone(res, 401, err)
             }
+            
             let cekRole = false
             for (let i = 0; i < role.length; i++) {
                 if (decode.role === role[i]) {
