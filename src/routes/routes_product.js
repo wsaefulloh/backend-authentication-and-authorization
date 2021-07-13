@@ -3,12 +3,14 @@ const routing = express.Router();
 const ctrl = require("../controllers/controllers_product");
 const validate = require("../middleware/validate")
 const upload = require("../middleware/upload")
+const cache = require("../middleware/cache")
+
 
 //CREATE --> POST
 routing.post("/add",validate(['admin']), upload.single("image"), ctrl.addData);
 
 //READ --> GET
-routing.get("/all",validate(['admin','user','member']),ctrl.getAll);
+routing.get("/all",validate(['admin','user','member']), ctrl.getAll);
 routing.get("/sort/name",validate(['admin','user','member']),ctrl.sortbyName);
 routing.get("/sort/date",validate(['admin','user','member']),ctrl.sortbyDate);
 routing.get("/sort/price/asc",validate(['admin','user','member']),ctrl.sortbyPriceASC);

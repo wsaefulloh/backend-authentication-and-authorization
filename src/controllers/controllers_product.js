@@ -2,10 +2,13 @@ const products = {}
 const model = require('../models/models_product')
 const respone = require('../helpers/respone')
 const uploads = require('../helpers/uploadCloud')
+const { redisDb } = require("../configs/redis")
 
 products.getAll = async (req, res) => {
     try {
         const result = await model.getAll()
+        const data = JSON.stringify(result)
+        redisDb.setex("product", 30, data)
         return respone(res, 200, result)
     } catch (error) {
         return respone(res, 500, error)
@@ -81,6 +84,7 @@ products.addData = async (req, res) => {
             store_name : object.store_name,
             id_category : object.id_category}
         const result = await model.addData(data)
+        redisDb.del("product")
         return respone(res, 201, result)
     } catch (error) {
         return respone(res, 500, error)
@@ -90,6 +94,7 @@ products.addData = async (req, res) => {
 products.updateData = async (req, res) => {
     try {
         const result = await model.updateData(req.body)
+        redisDb.del("product")
         return respone(res, 201, result)
     } catch (error) {
         return respone(res, 500, error)
@@ -99,6 +104,7 @@ products.updateData = async (req, res) => {
 products.removeData = async (req, res) => {
     try {
         const result = await model.removeData(req.params.id_product)
+        redisDb.del("product")
         return respone(res, 200, result)
     } catch (error) {
         return respone(res, 500, error)
