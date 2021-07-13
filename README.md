@@ -9,14 +9,15 @@
 [![Express.js](https://img.shields.io/badge/Express.js-4.x-orange.svg?style=rounded-square)](https://expressjs.com/en/starter/installing.html)
 [![Node.js](https://img.shields.io/badge/Node.js-v.12.13-green.svg?style=rounded-square)](https://nodejs.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v.13.3-blue.svg?style=rounded-square)](https://www.postgresql.org/)
+[![Redis](https://img.shields.io/badge/Redis-v.6.2-red.svg?style=rounded-square)](https://redis.io/)
 
 ## Feature
-- CRUD Product
-- CRUD Category
-- CRUD Bag
+- CRUD
 - MVC Models
-- Search Product Name
-- Filter Product Name, Category, Date Update, and Price order by ASC or DESC
+- Search and Filter
+- Authentication and Authorization
+- Upload File (Image)
+- File Logging
 
 ## Installation Steps
 
