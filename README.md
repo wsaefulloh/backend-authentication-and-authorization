@@ -24,7 +24,7 @@
 1. Clone the repository
 
 ```bash
-https://github.com/wsaefulloh/beginner-backend.git
+https://github.com/wsaefulloh/backend-authentication-and-authorization.git
 ```
 
 2. Install dependencies
