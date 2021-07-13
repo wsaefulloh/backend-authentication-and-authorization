@@ -14,6 +14,7 @@ products.getAll = () => {
                     brand : data.brand_product,
                     store : data.store_name,
                     price : data.price_product,
+                    image : data.image_product,
                     create : data.date_create,
                     update : data.date_update
                 }
@@ -39,6 +40,7 @@ products.sortbyDate = () => {
                     brand : data.brand_product,
                     store : data.store_name,
                     price : data.price_product,
+                    image : data.image_product,
                     create : data.date_create,
                     update : data.date_update
                 }
@@ -64,6 +66,7 @@ products.sortbyName = () => {
                     brand : data.brand_product,
                     store : data.store_name,
                     price : data.price_product,
+                    image : data.image_product,
                     create : data.date_create,
                     update : data.date_update
                 }
@@ -89,6 +92,7 @@ products.sortbyPriceASC = () => {
                     brand : data.brand_product,
                     store : data.store_name,
                     price : data.price_product,
+                    image : data.image_product,
                     create : data.date_create,
                     update : data.date_update
                 }
@@ -114,6 +118,7 @@ products.sortbyPriceDESC = () => {
                     brand : data.brand_product,
                     store : data.store_name,
                     price : data.price_product,
+                    image : data.image_product,
                     create : data.date_create,
                     update : data.date_update
                 }
@@ -140,6 +145,7 @@ products.sortbyCategory = (category) => {
                     brand : data.brand_product,
                     store : data.store_name,
                     price : data.price_product,
+                    image : data.image_product,
                     create : data.date_create,
                     update : data.date_update
                 }

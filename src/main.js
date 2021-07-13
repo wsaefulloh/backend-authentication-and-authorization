@@ -6,6 +6,9 @@ const bag = require("./routes/routes_bag.js")
 const users = require("./routes/routes_user")
 const respone = require('./helpers/respone')
 const auth = require('./routes/routes_auth')
+const {cloudConfig} = require("./configs/cloudinary")
+
+routing.use('*',cloudConfig)
 
 routing.use('/login',auth)
 routing.use('/login/*',(req,res) => {

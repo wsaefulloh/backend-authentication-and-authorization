@@ -1,6 +1,7 @@
 const products = {}
 const model = require('../models/models_product')
 const respone = require('../helpers/respone')
+const uploads = require('../helpers/uploadCloud')
 
 products.getAll = async (req, res) => {
     try {
@@ -67,9 +68,19 @@ products.searchbyName = async (req, res) => {
 
 products.addData = async (req, res) => {
     try {
-        console.log(req.file)
-        return
-        const result = await model.addData(req.body)
+        let urlImage
+        if (req.file !== undefined) {
+            urlImage = await uploads(req.file.path)
+        }
+        const object = await (req.body)
+        const data = {
+            name_product : object.name_product,
+            price_product : object.price_product,
+            brand_product : object.brand_product, 
+            image_product : urlImage || req.file.path,
+            store_name : object.store_name,
+            id_category : object.id_category}
+        const result = await model.addData(data)
         return respone(res, 201, result)
     } catch (error) {
         return respone(res, 500, error)

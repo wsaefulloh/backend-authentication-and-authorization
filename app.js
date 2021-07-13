@@ -9,6 +9,7 @@ const morgan = require("morgan");
 server.use(morgan("dev"))
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
+server.use("/public",express.static("public"))
 
 server.use(main)
 database.connect()
