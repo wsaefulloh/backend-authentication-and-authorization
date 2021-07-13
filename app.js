@@ -6,8 +6,13 @@ const main = require('./src/main')
 const database = require('./src/configs/db');
 const morgan = require("morgan");
 const redis = require("./src/configs/redis")
+const path = require("path")
+const fs = require("fs")
 
 server.use(morgan("dev"))
+let accessLogStream = fs.createWriteStream(path.join("./logs",'access.log'),{flags: 'a'})
+server.use(morgan('combined', { stream: accessLogStream }))
+
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 server.use("/public",express.static("public"))
