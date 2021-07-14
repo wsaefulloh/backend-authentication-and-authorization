@@ -16,7 +16,7 @@ class Redis {
                 }
 
                 if (res === "OK" || res === null) {
-                    resolve("Connection to redis successfully")
+                    resolve("Connection to Redis Successfully")
                 }
             })
         })
