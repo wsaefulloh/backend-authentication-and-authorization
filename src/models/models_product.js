@@ -107,7 +107,6 @@ products.sortbyPriceASC = () => {
 
 products.sortbyPriceDESC = () => {
     return new Promise((resolve, reject) => {
-        
         db.query("SELECT public.detail_product.*, public.category.name_category AS category_name FROM public.detail_product INNER JOIN public.category ON public.detail_product.id_category = public.category.id_category ORDER BY price_product DESC")
         .then((res) => {
             const productJSON = res.rows
