@@ -47,4 +47,4 @@ View the website at: http://localhost:9000
 
 ## End Point
 
-You can see all the end point [here](https://documenter.getpostman.com/view/16508598/Tzm3nGrT)
+You can see all the end point [here](https://documenter.getpostman.com/view/16508598/TzmChCzD)
